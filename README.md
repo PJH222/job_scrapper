@@ -12,6 +12,7 @@
 정신나갈것같앵
 ~.~
 
+![심심행,,,](https://blog.naver.com/riminiop)
 
 
 <!-- ---
