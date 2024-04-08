@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Scrapper</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" rel="stylesheet" type="text/css">
+  <style>
+    body {
+      background-image: url("https://cdn.pixabay.com/photo/2019/06/17/08/24/pastel-4279382_1280.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: #111111;
+    }
+    table {
+      background-color: #f2f2f2;
+      border-collapse: collapse;
+    }
+    .contrast {
+      margin-bottom: 20px; /* 다운로드 버튼 아래에 20px 여백 생성 */
+    }
+    nav ul:last-child li {
+    margin-right: 10px; /* 조정하고자 하는 여백의 크기 */
+  }
+  </style> 
+  <nav>
+  <ul>
+    <li><strong>&nbsp;&nbsp;&nbsp;&nbsp;Job Scrapper</strong></li>
+  </ul>
+  <ul>
+    <li style="margin-left: auto;"><a href="/" role="button" class="secondary">Home</a></li>
+  </ul>
+</nav>
+
+</head>
+<body>
+  
+  <main class="container">
+    <h1>Search Results for "<u>{{keyword}}</u> "</h1>
+    <a href="/export?keyword={{keyword}}" role="button" class="contrast" target="_blank">Download file.csv</a>
+    <table role="grid">
+      <thead>
+        <tr>
+          <th><h4 style="margin: 0;">Position</h4></th>
+          <th><h4 style="margin: 0;">Company</h4></th>
+          <th><h4 style="margin: 0;">Location</h4></th>
+          <th><h4 style="margin: 0;">Link</h4></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for job in jobs %}
+      <tr>
+        <td>{{job.position}}</td>
+        <td>{{job.company}}</td>
+        <td>{{job.location}}</td>
+        <td><a href="{{job.link}}" role="button" target="_blank" class="secondary">Apply</a></td>
+      </tr>
+    {% endfor %}
+      </tbody>
+    </table></figure>
+  </main>
+</body>
+</html>
